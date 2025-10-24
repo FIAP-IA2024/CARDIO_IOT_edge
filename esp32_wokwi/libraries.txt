@@ -1,0 +1,14 @@
+# Wokwi Library Dependencies
+# CardioIA - Sistema de Monitoramento Cardíaco
+
+# Biblioteca para sensor DHT22 (temperatura e umidade)
+DHT sensor library
+
+# Biblioteca MQTT para comunicação com broker
+PubSubClient
+
+# Biblioteca para manipulação de JSON
+ArduinoJson
+
+# Biblioteca Wire para comunicação I2C (MPU6050)
+# Wire (já inclusa no ESP32)

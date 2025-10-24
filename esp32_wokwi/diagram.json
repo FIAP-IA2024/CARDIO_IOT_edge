@@ -1,0 +1,83 @@
+{
+  "version": 1,
+  "author": "Equipe CardioIA - FIAP IA2024",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-esp32-devkit-v1",
+      "id": "esp",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht1",
+      "top": -76.8,
+      "left": 201.6,
+      "attrs": { "temperature": "37", "humidity": "65" }
+    },
+    {
+      "type": "wokwi-mpu6050",
+      "id": "imu1",
+      "top": 9.6,
+      "left": 345.6,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btnWifi",
+      "top": 124.8,
+      "left": 230.4,
+      "attrs": { "color": "blue", "label": "WiFi ON/OFF", "bounce": "0" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -124.8,
+      "left": 393.6,
+      "attrs": { "color": "green", "label": "STATUS" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": -124.8,
+      "left": 470.4,
+      "attrs": { "color": "red", "label": "ALERT" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -48,
+      "left": 403.2,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": -48,
+      "left": 480,
+      "attrs": { "value": "220" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "dht1:VCC", "esp:3V3", "red", [ "v0" ] ],
+    [ "dht1:GND", "esp:GND.1", "black", [ "v0" ] ],
+    [ "dht1:SDA", "esp:D15", "green", [ "v0" ] ],
+    [ "imu1:VCC", "esp:3V3", "red", [ "h0" ] ],
+    [ "imu1:GND", "esp:GND.2", "black", [ "h0" ] ],
+    [ "imu1:SCL", "esp:D22", "yellow", [ "h0" ] ],
+    [ "imu1:SDA", "esp:D21", "blue", [ "h0" ] ],
+    [ "btnWifi:1.l", "esp:D25", "purple", [ "h0" ] ],
+    [ "btnWifi:2.l", "esp:GND.2", "black", [ "h0" ] ],
+    [ "led1:A", "r1:1", "green", [ "v0" ] ],
+    [ "r1:2", "esp:D2", "green", [ "v0" ] ],
+    [ "led1:C", "esp:GND.1", "black", [ "v0" ] ],
+    [ "led2:A", "r2:1", "red", [ "v0" ] ],
+    [ "r2:2", "esp:D4", "red", [ "v0" ] ],
+    [ "led2:C", "esp:GND.1", "black", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
