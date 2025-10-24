@@ -94,15 +94,18 @@ CARDIO_IOT_edge/
 **Formato de Mensagem (JSON):**
 ```json
 {
-  "device_id": "CardioIA_ESP32_001",
   "timestamp": 1729732800,
   "temperature": 36.5,
   "humidity": 65.0,
   "bpm": 75,
   "movement": 0.8,
-  "buffer_count": 0
+  "device_id": "CardioIA_ESP32_001",
+  "status": "online",
+  "bpm_mode": "auto"
 }
 ```
+
+> 📍 **Referência no código:** Função `createJsonData()` em `esp32_wokwi/sketch.ino` (linhas 619-635)
 
 ### 📊 Dashboard (Node-RED)
 
@@ -331,37 +334,6 @@ const float MOVEMENT_THRESHOLD = 1.5;   // Movimento: 1.5 G
 └─────────────┘
 ```
 
----
-
-## 🚀 Melhorias Futuras
-
-### 📱 Aplicativo Mobile
-- App nativo para iOS/Android
-- Notificações push para alertas críticos
-- Histórico de dados sincronizado
-
-### 🤖 Inteligência Artificial
-- Modelo de ML para predição de anomalias cardíacas
-- Detecção de padrões anormais em BPM
-- Alertas preditivos baseados em tendências
-
-### ☁️ Cloud Computing
-- Armazenamento em banco de dados (MongoDB/InfluxDB)
-- API RESTful para integração com outros sistemas
-- Autenticação e autorização de usuários
-
-### 🔋 Gestão de Energia
-- Modo deep sleep para economia de bateria
-- Otimização de consumo energético
-- Monitoramento de nível de bateria
-
-### 📊 Analytics Avançado
-- Relatórios diários/semanais/mensais
-- Exportação de dados (CSV, PDF)
-- Comparação de tendências históricas
-
----
-
 ## 🧪 Testes e Validação
 
 ### Teste de Conectividade
@@ -401,11 +373,6 @@ Temp: 36.5°C | Humidity: 65.0% | BPM: 75 | Movement: 0.8G
 
 ---
 
-## 🎥 Demonstração
-
-> 📹 [Link para vídeo demonstrativo do projeto](#) *(a ser adicionado)*
-
----
 
 ## 📄 Licença
 
@@ -414,22 +381,11 @@ Para mais informações, consulte o arquivo [LICENSE](LICENSE).
 
 ---
 
-## 🆘 Suporte e Contato
-
-Para dúvidas, sugestões ou contribuições, entre em contato com a equipe:
-
-- **Jonas Felipe** - RM559800
-- **Gabriel Ribeiro** - RM560173
-- **Marcos Trazzini** - RM559926
-- **Edimilson Ribeiro** - RM559645
-
 ---
 
 <div align="center">
 
-**Desenvolvido com ❤️ pela equipe FIAP-IA2024**
+**Desenvolvido pela equipe de alunos FIAP - IATron**
 
 ![FIAP](https://img.shields.io/badge/FIAP-2025.1-red?style=for-the-badge)
-![Global Solution](https://img.shields.io/badge/Global%20Solution-Intelig%C3%AAncia%20Artificial-blue?style=for-the-badge)
-
 </div>
